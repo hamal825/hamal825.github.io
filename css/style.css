@@ -1,0 +1,185 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+html, body {
+  overflow: hidden;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 130vh;
+  position: fixed;
+  width: 100%;
+  transform: translateY(30vh);
+  transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.background:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: rgba(0, 0, 0, 0.3);*/
+}
+.background:first-child {
+  background-image: url(../images/pastel-product-backdrop-with-design-space.jpg)
+  /*url(https://i.postimg.cc/kXq9Qmnj/bgd1.jpg)*/;
+  transform: translateY(-15vh);
+}
+.background:first-child .content-wrapper {
+  transform: translateY(15vh);
+}
+/*.background:nth-child(2) {
+  background-image: url(https://i.postimg.cc/W14vywqg/photo-1424746219973-8fe3bd07d8e3.jpg);
+}
+.background:nth-child(3) {
+  background-image: url(https://i.postimg.cc/TY0xQ41T/photo-1433840496881-cbd845929862.jpg);
+}
+.background:nth-child(4) {
+  background-image: url(https://i.postimg.cc/W14vywqg/photo-1424746219973-8fe3bd07d8e3.jpg);
+}*/
+/* Set stacking context of slides */
+.background:nth-child(1) {
+  z-index: 4;
+}
+
+.background:nth-child(2) {
+  z-index: 3;
+}
+
+.background:nth-child(3) {
+  z-index: 2;
+}
+.background:nth-child(4) {
+  z-index: 1;
+}
+.content-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-flow: column nowrap;
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  transform: translateY(40vh);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+.content-title {
+  font-size: 12vh;
+  line-height: 1.4;
+}
+
+.background.up-scroll {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.up-scroll .content-wrapper {
+  transform: translateY(15vh);
+}
+.background.up-scroll + .background {
+  transform: translate3d(0, 30vh, 0);
+}
+.background.up-scroll + .background .content-wrapper {
+  transform: translateY(30vh);
+}
+
+.background.down-scroll {
+  transform: translate3d(0, -130vh, 0);
+}
+.background.down-scroll .content-wrapper {
+  transform: translateY(40vh);
+}
+.background.down-scroll + .background:not(.down-scroll) {
+  transform: translate3d(0, -15vh, 0);
+}
+.background.down-scroll + .background:not(.down-scroll) .content-wrapper {
+  transform: translateY(15vh);
+}
+
+/*아래는 내가 작성*/
+#menubar>div{width: 44px; margin: 33vh auto 0;}
+#menubar>div>div{margin-bottom: 16px; }
+#menubar a{padding: 4px; }
+#menubar img{width: 36px; position: relative;}
+#menubar a:before{
+  content:'';
+  width: 44px; height: 44px; border-radius: 22px;
+  margin: -4px;
+  background: rgba(255,255,255,0.5);
+  position: absolute;
+}
+
+#intro{font-size: 26px; color: black; margin-bottom: 24px;}
+#intro>span:first-child{color: firebrick;}
+#intro>span:last-child{}
+#contw{display: flex; margin: 0 auto; width: 90%; max-width: 1280px; gap: 24px; }
+#contg{
+  display: grid; width: calc(100% - 22vw);
+  justify-content: end;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 16px;
+}
+
+#contg>.item{
+  background: white; border-radius: 12px;
+  height: 200px;
+  color: black;
+}
+.itext>div:last-child{
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 32px; height: 32px;
+  background: red;
+  border-radius: 6px 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: black;
+
+}
+.itext{
+  width: 100%; height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+}
+.itext>p{
+  font-size: 20px;
+  width: 100%;
+  margin-top: -8px;
+}
+.itext a{text-decoration: none;}
+.gtp{
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  font-size: 14px;
+
+}
+#int_ab{
+  width: 22vw;
+  max-width: 280px; min-width: 200px;
+}
+#int_ab>div>p:last-child{
+  transform: rotate(90deg);
+  font-family: serif; font-weight: bold;
+}
+#int_ab>div{width: 70%; margin: 0 auto;
+}
+#int_ab img{width: 100%;}
